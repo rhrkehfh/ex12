@@ -36,6 +36,7 @@ const MyPage = () => {
         const user = await getDoc(doc(db, 'user', uid));
         console.log(user.data());
         setForm(user.data());
+        setImage(user.data().photo? user.data().photo : 'https://via.placeholder.com/200x200');
         setLoading(false);
     }
 
